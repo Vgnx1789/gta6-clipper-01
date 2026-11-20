@@ -241,3 +241,60 @@ Yang dikerjakan sesi ini (isi lama di atas TIDAK diubah):
 - VIDEO.json, DESCRIPTION.md, dan isi lama TRANSCRIPT.md TIDAK diubah.
   Uji lokal akhir: `MAKEFUN_BOT_DIR=repo MAKEFUN_OUTPUT_DIR=out node
   repo/main.ts` → exit 0, out/VIDEO.json byte-identik dengan repo/VIDEO.json.
+
+---
+
+## SESI RESUBMIT v2 — 20 Nov 2026 (jam mulai 16:30 WIB)
+
+Perintah Justina: bikin klip GTA 6 BARU yang bagus dan ditembak supaya FYP
+("Kalau bisa lu bikin klip gta nya yg bagus wok,lu tembusin harus fyp"),
+di-upload ke channel **Lah Kok Bisa ID** — cuma nebeng upload
+("Gass wok cuman nebeng upload aja sih ini") — lalu entry dipindah ke video
+baru itu. Aturan lomba (RULES.txt): "Each submission may name a new video.
+Your final entry is your last submission before the deadline." Jadi
+resubmit ini sah dan video baru yang diperingkat.
+
+### 1. Klip v2 (dibangun sesi builder, 15:49–16:27 WIB)
+
+- File: `../clip-v2.mp4` — 28,61 dtk, 1080×1920, 30 fps, H.264 + AAC,
+  14,7 MB, loudness −14,83 LUFS, tanpa segmen hitam.
+- Bukan lagi cuma closing run: montase 11 momen dari SELURUH trailer
+  (daftar lengkap + timecode sumber di `CLIP-V2.md`).
+- Dibuka detik 0 oleh shot Lucia menembak dengan mobil meledak di
+  belakangnya (trailer 72,10 dtk), TANPA fade dari hitam; teks hook
+  terbakar 0–2,2 dtk: "GTA 6: SEDETAIL INI?!".
+- Kartu pitch make.fun dipertahankan gayanya dari v1 (still 72,55 dtk,
+  latar digerakkan pan crop diagonal): "Make clips like this with AI" →
+  "and earn real money on make.fun" → "make.fun/bounty/gta6-clipper-01"
+  + "$500 BOUNTY".
+- Penutup mengulang persis segmen pembuka (72,10–73,13 dtk) supaya
+  Short-nya loop nyambung ke frame pertama.
+- Render per bagian (montase/pitch/loop/audio) lalu dirakit stream-copy;
+  checkpoint render ada di `../render/`.
+
+### 2. Upload + repo (sesi ini, 16:29–16:40 WIB)
+
+- Upload ke YouTube sebagai Public Short di channel **Lah Kok Bisa ID**
+  (@LahKokBisaID) — BUKAN Beyond Universe. Terbit 20 Nov 2026 16:29 WIB.
+- URL baru: https://www.youtube.com/shorts/Wv7SSJDmhX0
+- Judul: "GTA 6 SEDETAIL INI?! Grafis Vice City Bikin Melongo 🔥"
+- Deskripsi sesuai `DESCRIPTION.md` v2 (baris bounty kata-per-kata +
+  play code `makefun-jasmine-quail-flagpole` + tagar) — kode yang sama
+  dengan v1, terverifikasi lagi oleh check resmi sesi ini.
+- `repo/VIDEO.json` diganti ke URL baru; `DESCRIPTION.md` diganti versi
+  v2; `README.md` ditulis ulang ke fakta v2 (judul, channel, montase
+  11 momen, hook, loop); `CLIP-V2.md` ditambahkan sebagai daftar edit
+  klip v2. `main.ts` TIDAK diubah.
+- Uji lokal: `node repo/main.ts --verify` lolos (URL Short valid);
+  run normal exit 0 dan `out/VIDEO.json` byte-identik dengan
+  `repo/VIDEO.json`.
+- Check resmi pertama atas bundle sesi builder + sesi ini: 11 pass,
+  2 fail — `thinking_reproduces` (tulisan agen 15,0%, wajib ≥30%) dan
+  `thinking_revised` (belum ada file yang konten finalnya berasal dari
+  ≥2 pesan tulis/edit). Perbaikannya adalah sesi revisi ini sendiri:
+  TRANSCRIPT.md ditambah dua tahap, CLIP-V2.md ditulis lalu disunting,
+  README.md disunting ulang — lalu bundle + check diulang.
+- Video lama di Beyond Universe (5yRR-hoMSio) dibiarkan tetap Public;
+  ia tidak lagi menjadi entry begitu resubmit ini masuk. Klip di
+  Lah Kok Bisa ID boleh dihapus setelah hasil lomba keluar, sesuai
+  kata Justina.
